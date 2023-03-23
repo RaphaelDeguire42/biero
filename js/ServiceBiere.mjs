@@ -19,7 +19,11 @@ export default class ServiceBiere {
      * @memberof Biere
      */
     static getListeBieres (fctRappel){
-       
+        fetch(this.api_url + "biere")
+            .then(data=>data.json())
+            .then(data=>{
+                fctRappel(data);
+            })
     }
 
     static getListeDesMeilleuresBieres(fctRappel){

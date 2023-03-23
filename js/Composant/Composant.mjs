@@ -19,6 +19,7 @@ export default class Composant {
 
     setData(data){
         this.data = data;
+        this.afficher();
     }
 
     getData(){

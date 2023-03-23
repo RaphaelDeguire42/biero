@@ -38,7 +38,7 @@ export default class App {
         console.log("accueil");
     }
     produit(){
-        const oListe = new Composant(this.domParent, ['allo le monde'], true);
+        const oListe = new ListeComposant(this.domParent);
 
         console.log("mes produits")
     }
