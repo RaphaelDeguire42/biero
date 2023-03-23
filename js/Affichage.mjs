@@ -11,16 +11,37 @@ export default class Affichage {
             rendu : ""
         }
     }*/
+    
     static chargementGabarit(url_gabarit, nom, fctRappel){
-        console.log("chargement")
-        fetch(url_gabarit)
-            .then(gabarit=>gabarit.text())
-            .then(gabarit=>console.log(gabarit))
-            
+        
+        // Définition initiale
+        if(!this.oGabarit){
+            this.oGabarit= {};
+        }
+        if(!this.oGabarit[nom]){
+            this.oGabarit[nom] = {};
+            fetch(url_gabarit)
+                .then(gabarit=>gabarit.text())
+                .then(gabarit=>{
+                    this.oGabarit[nom] = {gabarit : gabarit};
+                    console.log(this.oGabarit);
+                    if(fctRappel){
+                        fctRappel();
+                    }
+                })
+        }else{
+            if(fctRappel){
+                fctRappel();
+            }
+        }
     }
 
-    genererHTML() {
-
+    static genererHTML(nom, data) {
+        let html = "";
+        if(this.oGabarit && this.oGabarit[nom]){
+            html = Mustache.render(this.oGabarit[nom].gabarit, data);
+        }
+        return html;
     }
 
 

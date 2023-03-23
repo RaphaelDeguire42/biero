@@ -5,6 +5,8 @@
        
 
     </aside>
+    
+
     <section>
         <table>
             <tr>
@@ -13,6 +15,14 @@
                 <th>Note</th>
                 <th>Nombre</th>
             </tr>
+            {{#data}}
+            <tr>
+                <td>{{nom}}</td>
+                <td>{{brasserie}}</td>
+                <td>{{note}}</td>
+                <td>Nombre</td>
+            </tr>
+            {{/data}}
        
         </table>
 

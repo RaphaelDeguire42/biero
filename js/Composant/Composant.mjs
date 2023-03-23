@@ -27,10 +27,15 @@ export default class Composant {
     }
 
     afficher(){
+        let chaineHTML = "";
+        if(this.nomGabarit){
+            chaineHTML = Affichage.genererHTML(this.nomGabarit, this.data);
+        }
         // Aller chercher le gabarit
         // Mettre les données dans le gabarit
         // Insérer dans le DOM
-        this.domParent.innerHTML = `<p> ${JSON.stringify(this.data)} </p>`;
+        this.domParent.innerHTML = chaineHTML;
+        //this.ajouterListener();
     }
     
 }

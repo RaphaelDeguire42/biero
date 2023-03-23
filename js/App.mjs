@@ -36,6 +36,7 @@ export default class App {
 
     accueil(){
         console.log("accueil");
+        this.domParent.innerHTML = "<h1>Accueil</h1>";
     }
     produit(){
         const oListe = new ListeComposant(this.domParent);
