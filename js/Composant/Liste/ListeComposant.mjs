@@ -1,3 +1,4 @@
+import Affichage from "../../Affichage.mjs";
 import ServiceBiere from "../../ServiceBiere.mjs";
 import Composant from "../Composant.mjs";
 
@@ -15,7 +16,7 @@ export default class ListeComposant extends Composant{
             
         })
            
-  
+        Affichage.chargementGabarit("./js/Composant/Liste/liste.html");
         
     }
 
