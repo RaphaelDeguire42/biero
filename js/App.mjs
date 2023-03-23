@@ -19,14 +19,35 @@ import page from "//unpkg.com/page/page.mjs";
 import ListeComposant from './Composant/Liste/ListeComposant.mjs';
 import AccueilComposant from './Composant/Accueil/AccueilComposant.mjs';
 import BiereComposant from './Composant/Biere/BiereComposant.mjs';
+import Composant from './Composant/Composant.mjs';
 
 
-class App {
+export default class App {
     constructor(){       
+        this.domParent = document.querySelector(".app");
 
+        page("/", this.accueil.bind(this));
+        page("/accueil", this.accueil.bind(this));
+        page("/produit", this.produit.bind(this));
+        page("/produit/:id", this.unProduit.bind(this));
+
+        page({hashbang : true});
+    }
+
+    accueil(){
+        console.log("accueil");
+    }
+    produit(){
+        const oListe = new Composant(this.domParent, ['allo le monde'], true);
+
+        console.log("mes produits")
+    }
+    unProduit(){
+        console.log("mes produits")
     }
 }
 
-new App();
+
+
 
 
