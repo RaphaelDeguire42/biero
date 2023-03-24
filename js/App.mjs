@@ -39,7 +39,13 @@ export default class App {
         this.domParent.innerHTML = "<h1>Accueil</h1>";
     }
     produit(){
-        const oListe = new ListeComposant(this.domParent);
+        if(!this.oListe){
+            this.oListe = new ListeComposant(this.domParent);
+        }
+        else{
+            this.oListe.miseAJour();
+        }
+
 
         console.log("mes produits")
     }
