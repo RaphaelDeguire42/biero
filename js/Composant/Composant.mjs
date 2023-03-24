@@ -18,8 +18,10 @@ export default class Composant {
     }
 
     setData(data){
-        this.data = data;
-        this.afficher();
+        if(JSON.stringify(this.data) != JSON.stringify(data)) {
+            this.data = data;
+            this.afficher();
+        }
     }
 
     getData(){
@@ -27,15 +29,22 @@ export default class Composant {
     }
 
     afficher(){
+        console.log("rendu");
         let chaineHTML = "";
-        if(this.nomGabarit){
-            chaineHTML = Affichage.genererHTML(this.nomGabarit, this.data);
-        }
         // Aller chercher le gabarit
         // Mettre les données dans le gabarit
         // Insérer dans le DOM
-        this.domParent.innerHTML = chaineHTML;
-        //this.ajouterListener();
+        if(this.nomGabarit){
+            chaineHTML = Affichage.genererHTML(this.nomGabarit, this.data);
+            //console.log(chaineHTML);
+            this.domParent.innerHTML = chaineHTML;
+            if(chaineHTML){
+                this.ajouterListener();
+            }
+        }
+        
+        
     }
+    ajouterListener(){ }
     
 }

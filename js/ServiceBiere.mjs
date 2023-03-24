@@ -39,7 +39,22 @@ export default class ServiceBiere {
     }
 
     static ajouterCommentaires(id, commentaire, fctRappel){
+        const monCommentaire = {
+            'courriel' : "toto@toto",
+            'commentaire' : "Lorem ipsum"
+        }
+        const entetes = new Headers();
+        entetes.append("Authorization", "Basic " + btoa('biero:biero'));
         
+        const options  = {
+            method : 'PUT',
+            mode: "cors",
+            body : JSON.stringify(monCommentaire),
+            headers : entetes
+        }
+        fetch(this.api_url + "biere/6/commentaire", options);
+
+
     }
 
 }

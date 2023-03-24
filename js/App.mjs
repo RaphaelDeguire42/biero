@@ -43,8 +43,11 @@ export default class App {
 
         console.log("mes produits")
     }
-    unProduit(){
+    unProduit(ctx){
+        console.log(ctx)
+        console.log(ctx.params.id)
         console.log("mes produits")
+        ServiceBiere.ajouterCommentaires();
     }
 }
 
