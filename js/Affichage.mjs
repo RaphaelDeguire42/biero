@@ -11,9 +11,9 @@ export default class Affichage {
             rendu : ""
         }
     }*/
-    
+
     static chargementGabarit(url_gabarit, nom, fctRappel){
-        
+
         // Définition initiale
         if(!this.oGabarit){
             this.oGabarit= {};
@@ -24,7 +24,6 @@ export default class Affichage {
                 .then(gabarit=>gabarit.text())
                 .then(gabarit=>{
                     this.oGabarit[nom] = {gabarit : gabarit};
-                    console.log(this.oGabarit);
                     if(fctRappel){
                         fctRappel();
                     }
