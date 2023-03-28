@@ -39,26 +39,20 @@ export default class ServiceBiere {
     }
 
     static ajouterCommentaires(id, commentaire, fctRappel){
-        // change this for real comment (this is a mock)
-        let comment = {
-            courriel: 'toto@toto',
-            commentaire: 'Wow'
+        const monCommentaire = {
+            'courriel' : "toto@toto",
+            'commentaire' : "Lorem ipsum"
         }
-        const headers = new Headers();
-        headers.append('Authorization', "Basic " + btoa('biero:biero'));
+        const entetes = new Headers();
+        entetes.append("Authorization", "Basic " + btoa('biero:biero'));
 
-        const option = {
-            method: 'PUT',
-            mode: 'cors',
-            body: JSON.stringify(comment),
-            headers: headers
+        const options  = {
+            method : 'PUT',
+            mode: "cors",
+            body : JSON.stringify(monCommentaire),
+            headers : entetes
         }
-
-        fetch(this.api_url + `biere/${id}/commentaire`, option)
-            .then(data=>data.json())
-            .then(data=>{
-                fctRappel(data);
-            })
+        fetch(this.api_url + "biere/6/commentaire", options);
     }
 
 }

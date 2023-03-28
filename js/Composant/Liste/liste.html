@@ -10,14 +10,17 @@
     <section>
         <table>
             <tr>
-                <th><span class="material-icons btnNomASC btnTri" data-tri="nom" data-ordre="ASC">arrow_downward</span> Nom <span class="material-icons btnNomDESC btnTri" data-tri="nom" data-ordre="DESC">arrow_upward</span></th>
-                <th>Brasserie</th>
+                <th>
+                    <span class="material-icons btnTri btnNomASC" data-tri="nom" data-ordre="ASC">arrow_downward</span> Nom
+                    <span class="material-icons btnTri btnNomDESC" data-tri="nom" data-ordre="DESC">arrow_upward</span>
+                </th>
+                <th><span class="material-icons btnTri btnNomASC" data-tri="brasserie" data-ordre="ASC">arrow_downward</span>Brasserie</th>
                 <th>Note</th>
                 <th>Nombre</th>
             </tr>
             {{#data}}
             <tr>
-                <td><a href="/produit/{{id_biere}}">{{nom}}</a></td>
+                <td><a href="/produit/{{id_biere}}"> {{nom}}</a></td>
                 <td>{{brasserie}}</td>
                 <td>{{note}}</td>
                 <td>{{note_nombre}}</td>
