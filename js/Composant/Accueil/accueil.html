@@ -1,9 +1,23 @@
-<section id="accueil">
+<div class="wrapper">
+   <section id="accueil">
    <h1>Bienvenue sur Biero client - Prototype</h1>
    <h2>Nos 5 meilleures bières</h2>
-   <section>
-        <!-- Afficher les 5 meilleures bières, selon les notes moyennes-->
-        <!-- Vous devez générer la vue requise à partir des informations retourner par le Webservice biero -->
-
+   <section class="grid grid--5">
+   {{#data}}
+      <div class="card" data-id="{{id_biere}}">
+         <div class="card__title">
+            <h4>{{nom}}</h4>
+            <p>{{brasserie}}</p>
+         </div>
+         <div class="card__img">
+            <img src="./img/{{image}}" alt="{{nom}}">
+         </div>
+         <div class="card__note stars stars--tiny">
+            {{{stars}}}
+            <p><small>nombre de notes: {{note_nombre}}</small></p>
+         </div>
+      </div>
+   {{/data}}
    </section>
-</section>
+   </section>
+</div>

@@ -1,0 +1,30 @@
+/**************************
+Section catalogue
+******************************/
+.catalogue{
+    padding: 16px 16px;
+    display: grid;
+    grid-template-columns : repeat(auto-fit, minmax(200px, .25fr));
+    gap:16px;
+    width: calc(95vw - 150px);
+    box-sizing: border-box;
+}
+.catalogue .carte {
+    height: 500px;
+    overflow-y: hidden;
+}
+.catalogue .carte .contenu {
+    text-overflow: ellipsis;
+}
+.catalogue .carte header{
+    position: absolute;
+    max-width: 200px;
+}
+.catalogue .carte img {
+    object-fit: cover;
+    max-width: 100%;
+    opacity: .2;
+}
+.catalogue section{
+    min-width: 600px;
+}

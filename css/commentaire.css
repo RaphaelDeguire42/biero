@@ -1,0 +1,16 @@
+.commentaire {
+    background-color: rgb(233, 233, 233);
+    width: 50ch;
+    border-radius: 3px;
+}
+
+.commentaire__header {
+    background-color: rgb(215, 212, 212);
+    display: flex;
+    justify-content: space-between;
+}
+
+.commentaire__header,
+.commentaire__content {
+    padding: 0.5em;
+}

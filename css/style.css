@@ -1,85 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bentham&family=Lexend&family=Literata:opsz@7..72&family=Montserrat&family=Playfair+Display&family=Playfair+Display+SC:wght@900&family=Poppins&family=Roboto&display=swap');
+
+@import url('card.css');
+@import url('catalogue.css');
+@import url('commentaire.css');
+@import url('ficheBiere.css');
+@import url('grid.css');
+@import url('topNav.css');
+
+:root {
+    --gouttiere: 3vw;
+    --degagement: max(3vh, 25px);
+    --rythme: 1.5em;
+
+    --paddingWrapper: 0 6vw;
+
+    --cardShadow: 0px 0px 15px -12px;
+}
+
 * {
-    font-family: 'Roboto', sans-serif;
-
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
-html, body {
-    margin:0px;
-    padding:0px;
+html,
+body {
+    margin: 0px;
+    padding: 0px;
 }
 
-/****************************
-Top Nav
-****************************/
-.top-nav{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    height: 64px;
-    background-color: turquoise;
-    align-items: center;
-    padding-left: 16px;
-    padding-right: 16px;
+h5+h4 {
+    margin-top: 0.5em;
 }
 
-.top-nav nav {
-    display: flex;
-    flex-direction: row;
-    margin-right: 32px;
+section {
+    margin: 50px 0;
 }
 
-.top-nav a {
-    display: block;
-    margin: 0px 8px;
-    text-align: center;
+img {
+    width: 100%;
 }
+
+td {
+    padding: 0 1.3em;
+}
+
+
 /***************************
 * Main
 ****************************/
-main{
+main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 main aside {
     display: flex;
     flex-direction: column;
 }
 
-/**************************
-Section catalogue
-******************************/
-.catalogue{
-    padding: 16px 16px;
-    display: grid;
-    grid-template-columns : repeat(auto-fit, minmax(200px, .25fr));
-    gap:16px;
-    width: calc(95vw - 150px);
-    box-sizing: border-box;
-}
-.catalogue .carte {
-    height: 500px;
-    overflow-y: hidden;
-}
-.catalogue .carte .contenu {
-    text-overflow: ellipsis;
-}
-.catalogue .carte header{
-    position: absolute;
-    max-width: 200px;
-}
-.catalogue .carte img {
-    object-fit: cover;
-    max-width: 100%;
-    opacity: .2;
-}
-.catalogue section{
-    min-width: 600px;
-}
+
 /************************
 Utilitaire
 ************************/
 
 .filler {
     flex-grow: 1;
+}
+
+.wrapper {
+    padding: var(--paddingWrapper);
+    position: relative;
+    width: 100%;
+}
+
+.input--comment {
+    display: flex;
+    flex-direction: column;
+}
+
+.formCommentaire {
+    padding: 0.5em;
+    max-width: 50ch;
+}
+
+.formCommentaire>* {
+    margin: 0.5em 0;
+}
+
+.error {
+    color: red;
+}
+
+.envoyerCommentaire {
+    padding: 0.3em 0.5em;
+    background-color: turquoise;
+    width: fit-content;
+}
+
+.envoyerCommentaire:hover {
+    cursor: pointer;
+}
+
+
+.stars span {
+    display: inline-block;
+    width: 25px;
+}
+
+.stars--tiny span {
+    width: 20px;
 }

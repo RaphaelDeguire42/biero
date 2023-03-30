@@ -2,10 +2,6 @@
  * Fichier principal, il contient la logique de l'application.
  *
  * De manière générale, cette application permet d'afficher la liste des bières, le détail d'une bière et de laisser des commentaires
- * @todo Ajouter l'affichage de la page d'accueil (les 5 meilleures bières, avec les informations de base [nom, brasserie, moyenne, nombre de note])
- * @todo Compléter la page /produit. Faire fonctionner les tris (nom, brasserie et note [ASC et DESC])
- * @todo Ajouter une page Détail. Une route supplémentaire /produit/:id qui affiche les détails d'une bière ([nom, brasserie, moyenne, nombre de note, description]) ainsi que les commentaires reçus
- * @todo Un utilisateur ayant un courriel valide (a@a)peut ajouter un commentaire sur une bière
  * @todo (Bonus mais juste pour des points virtuels) Utiliser les partials (mustache) pour gérer les affichages (accueil et liste)
  * @todo (Bonus mais juste pour des points virtuels) Remplacer mustache.js par handlebar.js
  * @todo (Bonus mais juste pour des points virtuels) Utiliser page.js pour faire les tris (Donc l'url avec les queryString)
@@ -29,31 +25,25 @@ export default class App {
         page("/", this.accueil.bind(this));
         page("/accueil", this.accueil.bind(this));
         page("/produit", this.produit.bind(this));
-        page("/produit/:id", this.unProduit.bind(this));
+        page("/produit/:id", this.detailProduit.bind(this));
 
         page({hashbang : true});
     }
 
     accueil(){
-        console.log("accueil");
-        this.domParent.innerHTML = "<h1>Accueil</h1>";
+        this.oAccueil = new AccueilComposant(this.domParent);
     }
+
     produit(){
-        if(!this.oListe){
+        if(!this.oListe)
             this.oListe = new ListeComposant(this.domParent);
-        }
-        else{
+        else
             this.oListe.miseAJour();
-        }
-
-
-        console.log("mes produits")
     }
-    unProduit(ctx){
-        console.log(ctx)
-        console.log(ctx.params.id)
-        console.log("mes produits")
-        ServiceBiere.ajouterCommentaires();
+
+    detailProduit(ctx){
+        const id_biere = ctx.params.id;
+        this.oBiere = new BiereComposant(this.domParent, id_biere);
     }
 }
 

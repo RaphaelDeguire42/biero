@@ -1,0 +1,9 @@
+.grid {
+    display: grid;
+    gap: var(--gouttiere);
+}
+
+.grid--5 {
+    gap: var(--gouttiere);
+    grid-template-columns: repeat(5, 1fr);
+}

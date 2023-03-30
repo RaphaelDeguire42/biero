@@ -1,0 +1,61 @@
+<div class="wrapper">
+    <section id="biere">
+        {{#data}}
+        <div class="ficheBiere">
+            <h2>{{nom}}</h2>
+            <p>{{brasserie}}</p>
+            <div class="ficheBiere__content">
+                <div class="ficheBiere__img">
+                    <img src="./img/{{image}}" alt="{{nom}}">
+                </div>
+                <div class="ficheBiere__infos">
+                    <div class="ficheBiere__infoBox">
+                        <p class="ficheBiere__titre">Description</p>
+                        <p>{{description}}</p>
+                    </div>
+                    <div class="ficheBiere__infoBox">
+                        <p class="ficheBiere__titre">Note</p>
+                        <div class="stars">
+                            {{#note}}
+                                {{{stars}}}
+                                <p><small>nombre de notes: {{nombre}}</small></p>
+                            {{/note}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ficheBiere__commentaires">
+            <h3>Commentaires</h3>
+            {{#commentaires}}
+            <div class="ficheBiere__content">
+                <div class=" commentaire">
+                    <div class="commentaire__header">
+                        <p class="ficheBiere__titre">{{courriel}}</p>
+                        <p><small>{{date_ajout}}</small></p>
+                    </div>
+                    <div class="commentaire__content">
+                        <p>{{commentaire}}</p>
+                    </div>
+                </div>
+            </div>
+            {{/commentaires}}
+        </div>
+        <br>
+        <form action="" class="commentaire formCommentaire">
+            <h3 >Ajouter un commentaire</h3>
+            <div class="input input--courriel">
+                <label for="usager_courriel">Courriel : </label>
+                <input type="email" name="usager_courriel" id="usager_courriel" required>
+            </div>
+            <div class="input input--comment">
+                <label for="commentire">Commentaire :</label>
+                <textarea name="commentaire" id="" cols="30" rows="10" required></textarea>
+            </div>
+            <p class="envoyerCommentaire">Envoyer<p>
+        </form>
+        {{/data}}
+    </section>
+</div>
+
+

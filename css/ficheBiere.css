@@ -1,0 +1,51 @@
+/* Fiche Bière */
+
+.ficheBiere {
+    display: flex;
+    flex-direction: column;
+}
+
+.ficheBiere__content {
+    display: flex;
+    gap: var(--degagement);
+    margin-top: var(--degagement);
+}
+
+.ficheBiere__img {
+    width: min(20vw, 175px);
+}
+
+.ficheBiere__img img {
+    box-sizing: border-box;
+}
+
+.ficheBiere__infos {
+    max-width: 30ch;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.ficheBiere__infoBox {
+    margin-bottom: var(--degagement);
+}
+
+.ficheBiere__titre {
+    font-weight: 600;
+}
+
+.ficheBiere__img:hover img,
+.card:hover .card__img img {
+    max-width: 100%;
+    transform: scale(1);
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.3s;
+}
+
+.ficheBiere__img img,
+.card__img img {
+    transform: scale(0.95);
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.3s;
+}

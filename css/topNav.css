@@ -1,0 +1,25 @@
+/****************************
+Top Nav
+****************************/
+.top-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 64px;
+    background-color: turquoise;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.top-nav nav {
+    display: flex;
+    flex-direction: row;
+    margin-right: 32px;
+}
+
+.top-nav a {
+    display: block;
+    margin: 0px 8px;
+    text-align: center;
+}

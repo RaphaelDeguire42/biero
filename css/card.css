@@ -1,0 +1,27 @@
+.card {
+    box-shadow: var(--cardShadow);
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.2em 0.3em;
+}
+
+.card:hover{
+    cursor: pointer;
+ }
+
+.card__title {
+   text-align: center;
+}
+
+.card__img {
+    width: 75px;
+    align-self: center;
+}
+
+.card__note {
+    width: 200px;
+    margin: 0;
+}
+
